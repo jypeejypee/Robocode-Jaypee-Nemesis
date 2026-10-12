@@ -88,7 +88,8 @@ public class JaypeeNemesis extends AdvancedRobot {
 
     private void fireAt(EnemyInfo info) {
         if (getEnergy() < 1.0) {
-            return; 
+            return;
+        }
 
         double distance = info.distance;
         double bulletPower = distance < 200 ? 3.0 : distance < 400 ? 2.0 : 1.2;
@@ -116,7 +117,6 @@ public class JaypeeNemesis extends AdvancedRobot {
         if (getGunHeat() == 0 && Math.abs(getGunTurnRemainingRadians()) < Math.toRadians(10)) {
             setFire(bulletPower);
         }
-    }
     }
 
     private void moveSafely() {
